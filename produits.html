@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZayFBS - Produits</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <img src="images/logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="Acceuil.html">Accueil</a></li>
+                <li><a href="produits.html" class="active">Produits</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="cart-icon-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cart-badge">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="cart-close" id="cart-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">Total : <span id="cart-total">0</span> DH</div>
+            <button class="btn-checkout">Commander</button>
+        </div>
+    </div>
+
+    <!-- Modal Ajouter/Modifier -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Ajouter un produit</h3>
+                <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="product-form">
+                <input type="hidden" id="edit-index">
+                <div class="form-group">
+                    <label>Nom du produit</label>
+                    <input type="text" id="input-name" placeholder="Ex: Extra Virgin Olive Oil 1L" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="input-desc" placeholder="Description du produit..." rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Prix (DH)</label>
+                    <input type="number" id="input-price" placeholder="Ex: 150" required>
+                </div>
+                <div class="form-group">
+                    <label>URL de l'image</label>
+                    <input type="text" id="input-img" placeholder="https://... ou images/produit.png">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="btn-cancel">Annuler</button>
+                    <button type="submit" class="btn-save">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Main Content -->
+    <main class="produits-main">
+        <div class="produits-header">
+            <h2>Nos Produits</h2>
+            <button class="btn-add-product" id="btn-add-product">
+                <i class="fa-solid fa-plus"></i> Ajouter un produit
+            </button>
+        </div>
+
+        <div class="products-list" id="products-list"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ZayFBS — Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
