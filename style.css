@@ -1,11 +1,3 @@
-:root {
-    --primary-olive: #a3ad7c;
-    --dark-olive: #6b705c;
-    --cream: #fdfaf0;
-    --text-black: #1a1a1a;
-    --white: #ffffff;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -14,14 +6,14 @@
 }
 
 body {
-    background-color: var(--primary-olive);
-    color: var(--text-black);
+    background-color: #a3ad7c;
+    color: #1a1a1a;
 }
 
 /* ========== HEADER ========== */
 
 header {
-    background-color: var(--cream);
+    background-color: #fdfaf0;
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -48,15 +40,15 @@ nav ul li {
 
 nav a {
     text-decoration: none;
-    color: var(--text-black);
+    color: #1a1a1a;
     font-weight: 400;
 }
 
 nav a.active {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     padding: 8px 15px;
     border-radius: 8px;
-    color: var(--white);
+    color: #ffffff;
 }
 
 /* ========== HERO ========== */
@@ -69,7 +61,7 @@ nav a.active {
     justify-content: center;
     align-items: flex-start;
     padding: 0 5%;
-    color: var(--white);
+    color: #ffffff;
 }
 
 .location-tag {
@@ -99,7 +91,7 @@ nav a.active {
 }
 
 .btn-primary {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     color: #1a1a1a;
     padding: 12px 10px;
     text-decoration: none;
@@ -118,11 +110,11 @@ nav a.active {
 
 .farms-section {
     padding: 5%;
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
 }
 
 .farms-section h2 {
-    color: var(--white);
+    color: #ffffff;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 10%;
@@ -170,7 +162,7 @@ nav a.active {
 }
 
 .process-section h2 {
-    color: var(--white);
+    color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 11%;
 }
@@ -202,7 +194,7 @@ nav a.active {
 /* ========== CERTIFICATIONS ========== */
 
 .certifications {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     padding: 60px 0;
     text-align: center;
 }
@@ -232,7 +224,7 @@ nav a.active {
 .produits-main {
     min-height: 80vh;
     padding: 40px 5%;
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
 }
 
 .produits-header {
@@ -251,8 +243,8 @@ nav a.active {
 }
 
 .btn-add-product {
-    background-color: var(--primary-olive);
-    color: var(--white);
+    background-color: #a3ad7c;
+    color: #ffffff;
     border: none;
     padding: 12px 22px;
     border-radius: 10px;
@@ -265,7 +257,7 @@ nav a.active {
 }
 
 .btn-add-product:hover {
-    background-color: var(--dark-olive);
+    background-color: #6b705c;
 }
 
 .products-list {
@@ -291,7 +283,6 @@ nav a.active {
     width: 240px;
     min-width: 240px;
     min-height: 200px;
-    
 }
 
 .product-img img {
@@ -330,8 +321,8 @@ nav a.active {
 }
 
 .product-price {
-    background-color: var(--primary-olive);
-    color: var(--white);
+    background-color: #a3ad7c;
+    color: #ffffff;
     padding: 8px 18px;
     border-radius: 8px;
     font-weight: 600;
@@ -351,7 +342,7 @@ nav a.active {
 }
 
 .btn-cart:hover {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     color: white;
 }
 
@@ -371,7 +362,7 @@ nav a.active {
 }
 
 .btn-edit:hover {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     color: white;
 }
 
@@ -382,12 +373,12 @@ nav a.active {
 
 .no-products {
     text-align: center;
-    color: var(--white);
+    color: #ffffff;
     font-size: 1.2rem;
     margin-top: 60px;
 }
 
-/* CART */
+/* ========== CART ========== */
 
 .cart-badge {
     background-color: #c0392b;
@@ -443,7 +434,7 @@ nav a.active {
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
 }
 
 .cart-header h3 {
@@ -518,7 +509,7 @@ nav a.active {
 
 .cart-item-price {
     font-size: 0.8rem;
-    color: var(--dark-olive);
+    color: #6b705c;
     font-weight: 600;
 }
 
@@ -585,7 +576,7 @@ nav a.active {
 }
 
 .btn-checkout {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     color: white;
     border: none;
     padding: 14px;
@@ -596,10 +587,10 @@ nav a.active {
 }
 
 .btn-checkout:hover {
-    background-color: var(--dark-olive);
+    background-color: #6b705c;
 }
 
-/* MODAL */
+/* ========== MODAL ========== */
 
 .modal-overlay {
     position: fixed;
@@ -620,7 +611,7 @@ nav a.active {
 }
 
 .modal {
-    background: var(--cream);
+    background: #fdfaf0;
     border-radius: 16px;
     padding: 35px;
     width: 100%;
@@ -676,7 +667,7 @@ nav a.active {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--primary-olive);
+    border-color: #a3ad7c;
 }
 
 .form-actions {
@@ -701,7 +692,7 @@ nav a.active {
 }
 
 .btn-save {
-    background-color: var(--primary-olive);
+    background-color: #a3ad7c;
     color: white;
     border: none;
     padding: 10px 22px;
@@ -712,17 +703,17 @@ nav a.active {
 }
 
 .btn-save:hover {
-    background-color: var(--dark-olive);
+    background-color: #6b705c;
 }
 
-/* TOAST */
+/* ========== TOAST ========== */
 
 .toast {
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background-color: var(--dark-olive);
+    background-color: #6b705c;
     color: white;
     padding: 12px 28px;
     border-radius: 30px;
@@ -739,10 +730,10 @@ nav a.active {
     transform: translateX(-50%) translateY(0);
 }
 
-/* FOOTER */
+/* ========== FOOTER ========== */
 
 footer {
-    background-color: var(--cream);
+    background-color: #fdfaf0;
     padding: 20px;
     text-align: center;
     font-size: 0.9rem;
