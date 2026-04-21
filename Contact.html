@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZayFBS - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <img src="images/logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="Acceuil.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li>
+                    <a href="#" id="cart-icon-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="cart-close" id="cart-close">X</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total :</span>
+                <span><span id="cart-total">0</span> DH</span>
+            </div>
+            <button class="btn-checkout">Commander</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <main class="contact-main">
+        <div class="contact-info">
+            <h2>Contacter Nous</h2>
+
+            <div class="info-block">
+                <p class="info-label">Adresse :</p>
+                <p>Route de Beni Mellal, Fquih Ben Saleh, Maroc</p>
+            </div>
+
+            <div class="info-block">
+                <p class="info-label">Téléphone :</p>
+                <p>+212 612345678</p>
+            </div>
+
+            <div class="info-block">
+                <p class="info-label">Email :</p>
+                <p>contact@zayfbs.com</p>
+            </div>
+
+            <div class="info-block">
+                <p class="info-label">Horaires :</p>
+                <p>Lun - Sam : 8h00 - 18h00</p>
+            </div>
+        </div>
+
+        <div class="contact-form-card">
+            <div class="form-group">
+                <label>Nom Complet :</label>
+                <input type="text" id="input-nom" placeholder="Vote nom...">
+            </div>
+            <div class="form-group">
+                <label>Adresse Email :</label>
+                <input type="email" id="input-email" placeholder="vous@exemple.com">
+            </div>
+            <div class="form-group">
+                <label>Sujet :</label>
+                <input type="text" id="input-sujet" placeholder="ex : Commande en gros, Partenariat...">
+            </div>
+            <div class="form-group">
+                <label>Message :</label>
+                <textarea id="input-message" rows="5" placeholder="écrire votre message ici..."></textarea>
+            </div>
+            <div class="contact-form-actions">
+                <button class="btn-send" id="btn-send">Envoyer le message</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ZayFBS — Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

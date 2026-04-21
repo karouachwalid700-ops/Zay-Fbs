@@ -1,3 +1,5 @@
+// PRODUCTS DATA
+
 const defaultProducts = [
     {
         name: "Pure Black Seed Olive Oil 500ml",
@@ -22,15 +24,22 @@ const defaultProducts = [
 let products = [...defaultProducts];
 let cart = [];
 
+// TOAST
+
 function showToast(msg) {
     const toast = document.getElementById('toast');
+    if (!toast) return;
     toast.textContent = msg;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 2800);
 }
 
+// PRODUCTS
+
 function renderProducts() {
     const list = document.getElementById('products-list');
+    if (!list) return;
+
     list.innerHTML = '';
 
     if (products.length === 0) {
@@ -60,38 +69,53 @@ function renderProducts() {
     });
 }
 
+// CART
+
 function addToCart(index) {
     const p = products[index];
     const existing = cart.find(item => item.name === p.name);
+
     if (existing) {
         existing.qty += 1;
     } else {
-        cart.push({ name: p.name, price: p.price, qty: 1, img: p.img || 'images/placeholder.png' });
+        cart.push({
+            name: p.name,
+            price: p.price,
+            qty: 1,
+            img: p.img || 'images/placeholder.png'
+        });
     }
+
     updateCartBadge();
     showToast('Produit ajouté au panier !');
 }
 
 function updateCartBadge() {
-    const total = cart.reduce((sum, item) => sum + item.qty, 0);
     const badge = document.getElementById('cart-badge');
+    if (!badge) return;
+
+    const total = cart.reduce((sum, item) => sum + item.qty, 0);
     badge.textContent = total;
     badge.style.display = total > 0 ? 'flex' : 'none';
 }
 
 function renderCart() {
     const container = document.getElementById('cart-items');
+    if (!container) return;
+
     container.innerHTML = '';
 
     if (cart.length === 0) {
         container.innerHTML = '<p class="cart-empty">Votre panier est vide.</p>';
-        document.getElementById('cart-total').textContent = '0';
+        const totalEl = document.getElementById('cart-total');
+        if (totalEl) totalEl.textContent = '0';
         return;
     }
 
     cart.forEach((item, i) => {
         const div = document.createElement('div');
         div.className = 'cart-item';
+
         div.innerHTML = `
             <img class="cart-item-img" src="${item.img}" alt="${item.name}">
             <div class="cart-item-info">
@@ -105,16 +129,19 @@ function renderCart() {
                 <button class="cart-remove" onclick="removeFromCart(${i})">X</button>
             </div>
         `;
+
         container.appendChild(div);
     });
 
     const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-    document.getElementById('cart-total').textContent = total;
+    const totalEl = document.getElementById('cart-total');
+    if (totalEl) totalEl.textContent = total;
 }
 
 function changeQty(index, delta) {
     cart[index].qty += delta;
     if (cart[index].qty <= 0) cart.splice(index, 1);
+
     updateCartBadge();
     renderCart();
 }
@@ -125,23 +152,28 @@ function removeFromCart(index) {
     renderCart();
 }
 
+// CART UI
+
 function openCart() {
-    document.getElementById('cart-sidebar').classList.add('open');
-    document.getElementById('cart-overlay').classList.add('show');
+    document.getElementById('cart-sidebar')?.classList.add('open');
+    document.getElementById('cart-overlay')?.classList.add('show');
     renderCart();
 }
 
 function closeCart() {
-    document.getElementById('cart-sidebar').classList.remove('open');
-    document.getElementById('cart-overlay').classList.remove('show');
+    document.getElementById('cart-sidebar')?.classList.remove('open');
+    document.getElementById('cart-overlay')?.classList.remove('show');
 }
 
-document.getElementById('cart-icon-btn').addEventListener('click', (e) => {
+document.getElementById('cart-icon-btn')?.addEventListener('click', (e) => {
     e.preventDefault();
     openCart();
 });
-document.getElementById('cart-close').addEventListener('click', closeCart);
-document.getElementById('cart-overlay').addEventListener('click', closeCart);
+
+document.getElementById('cart-close')?.addEventListener('click', closeCart);
+document.getElementById('cart-overlay')?.addEventListener('click', closeCart);
+
+// MODAL
 
 function openAddModal() {
     document.getElementById('modal-title').textContent = 'Ajouter un produit';
@@ -152,29 +184,36 @@ function openAddModal() {
 
 function openEditModal(index) {
     const p = products[index];
+
     document.getElementById('modal-title').textContent = 'Modifier le produit';
     document.getElementById('edit-index').value = index;
     document.getElementById('input-name').value = p.name;
     document.getElementById('input-desc').value = p.desc;
     document.getElementById('input-price').value = p.price;
     document.getElementById('input-img').value = p.img || '';
+
     document.getElementById('modal-overlay').classList.add('show');
 }
 
 function closeModal() {
-    document.getElementById('modal-overlay').classList.remove('show');
+    document.getElementById('modal-overlay')?.classList.remove('show');
 }
 
-document.getElementById('btn-add-product').addEventListener('click', openAddModal);
-document.getElementById('modal-close').addEventListener('click', closeModal);
-document.getElementById('btn-cancel').addEventListener('click', closeModal);
-document.getElementById('modal-overlay').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
+// EVENTS MODAL
+
+document.getElementById('btn-add-product')?.addEventListener('click', openAddModal);
+document.getElementById('modal-close')?.addEventListener('click', closeModal);
+document.getElementById('btn-cancel')?.addEventListener('click', closeModal);
+
+document.getElementById('modal-overlay')?.addEventListener('click', (e) => {
+    if (e.target.id === 'modal-overlay') closeModal();
 });
 
-document.getElementById('product-form').addEventListener('submit', (e) => {
+document.getElementById('product-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const idx = document.getElementById('edit-index').value;
+
     const newProduct = {
         name: document.getElementById('input-name').value.trim(),
         desc: document.getElementById('input-desc').value.trim(),
@@ -201,6 +240,33 @@ function deleteProduct(index) {
         showToast('Produit supprimé.');
     }
 }
+
+// CONTACT
+
+const btnSend = document.getElementById('btn-send');
+
+if (btnSend) {
+    btnSend.addEventListener('click', () => {
+        const nom = document.getElementById('input-nom').value.trim();
+        const email = document.getElementById('input-email').value.trim();
+        const sujet = document.getElementById('input-sujet').value.trim();
+        const message = document.getElementById('input-message').value.trim();
+
+        if (!nom || !email || !sujet || !message) {
+            showToast('Veuillez remplir tous les champs.');
+            return;
+        }
+
+        showToast('Message envoyé avec succès !');
+
+        document.getElementById('input-nom').value = '';
+        document.getElementById('input-email').value = '';
+        document.getElementById('input-sujet').value = '';
+        document.getElementById('input-message').value = '';
+    });
+}
+
+// INIT
 
 updateCartBadge();
 renderProducts();

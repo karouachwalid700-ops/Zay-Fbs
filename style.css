@@ -10,7 +10,7 @@ body {
     color: #1a1a1a;
 }
 
-/* ========== HEADER ========== */
+/*  HEADER  */
 
 header {
     background-color: #fdfaf0;
@@ -51,7 +51,7 @@ nav a.active {
     color: #ffffff;
 }
 
-/* ========== HERO ========== */
+/*  HERO  */
 
 .hero {
     height: 95vh;
@@ -106,7 +106,7 @@ nav a.active {
     color: white;
 }
 
-/* ========== FARMS ========== */
+/*  FARMS  */
 
 .farms-section {
     padding: 5%;
@@ -154,7 +154,7 @@ nav a.active {
     margin-bottom: 15px;
 }
 
-/* ========== PROCESS ========== */
+/*  PROCESS  */
 
 .process-section {
     padding: 0 5%;
@@ -191,7 +191,7 @@ nav a.active {
     font-size: 15px;
 }
 
-/* ========== CERTIFICATIONS ========== */
+/*  CERTIFICATIONS  */
 
 .certifications {
     background-color: #a3ad7c;
@@ -219,7 +219,7 @@ nav a.active {
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
 }
 
-/* ========== PRODUCTS PAGE ========== */
+/*  PRODUCTS PAGE  */
 
 .produits-main {
     min-height: 80vh;
@@ -378,7 +378,7 @@ nav a.active {
     margin-top: 60px;
 }
 
-/* ========== CART ========== */
+/*  CART  */
 
 .cart-badge {
     background-color: #c0392b;
@@ -605,7 +605,7 @@ nav a.active {
     background-color: white;
 }
 
-/* ========== MODAL ========== */
+/*  MODAL  */
 
 .modal-overlay {
     position: fixed;
@@ -721,7 +721,7 @@ nav a.active {
     background-color: #91b90f;
 }
 
-/* ========== TOAST ========== */
+/*  TOAST  */
 
 .toast {
     position: fixed;
@@ -745,7 +745,69 @@ nav a.active {
     transform: translateX(-50%) translateY(0);
 }
 
-/* ========== FOOTER ========== */
+
+/*  CONTACT PAGE  */
+
+.contact-main {
+    min-height: 80vh;
+    padding: 60px 5%;
+    background-color: #a3ad7c;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.contact-info {
+    flex: 1;
+    color: #1a1a1a;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+
+.info-label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.contact-form-card {
+    flex: 1.2;
+    background-color: #e5e5e5;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.contact-form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-send {
+    background-color: #a3ad7c;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #6b705c;
+    color: white;
+}
+
+/*  FOOTER  */
 
 footer {
     background-color: #fdfaf0;
