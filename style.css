@@ -611,8 +611,8 @@ nav a.active {
 }
 
 .modal {
-    background: #fdfaf0;
-    border-radius: 16px;
+    background: #e5e5e5;
+    border-radius: 8px;
     padding: 35px;
     width: 100%;
     max-width: 530px;
@@ -623,11 +623,11 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .modal-header h3 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 700;
 }
 
@@ -640,7 +640,7 @@ nav a.active {
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -672,14 +672,14 @@ nav a.active {
 
 .form-actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 12px;
     margin-top: 10px;
 }
 
 .btn-cancel {
-    background: #e0e0e0;
-    border: none;
+    background: transparent;
+    border: 2px solid black;
     padding: 10px 22px;
     border-radius: 8px;
     cursor: pointer;
@@ -693,7 +693,7 @@ nav a.active {
 
 .btn-save {
     background-color: #a3ad7c;
-    color: white;
+    color: black;
     border: none;
     padding: 10px 22px;
     border-radius: 8px;
