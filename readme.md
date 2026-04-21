@@ -1,1 +1,3 @@
-`console.log("hello")`
+```html
+<h1>Hello</h1>
+```
