@@ -577,7 +577,7 @@ nav a.active {
 
 .btn-checkout {
     background-color: #a3ad7c;
-    color: white;
+    color: black;
     border: none;
     padding: 14px;
     border-radius: 10px;
@@ -587,7 +587,22 @@ nav a.active {
 }
 
 .btn-checkout:hover {
-    background-color: #6b705c;
+    background-color: #91b90f;
+}
+
+.btn-annuler{
+    background: transparent;
+    color: black;
+    border: 2px solid black;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-annuler:hover{
+    background-color: white;
 }
 
 /* ========== MODAL ========== */
@@ -688,7 +703,7 @@ nav a.active {
 }
 
 .btn-cancel:hover {
-    background: #ccc;
+    background: white;
 }
 
 .btn-save {
@@ -703,7 +718,7 @@ nav a.active {
 }
 
 .btn-save:hover {
-    background-color: #6b705c;
+    background-color: #91b90f;
 }
 
 /* ========== TOAST ========== */
