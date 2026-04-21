@@ -1,1 +1,1 @@
-[image](bg.png)
+![image](bg.png)
