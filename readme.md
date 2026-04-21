@@ -1,1 +1,0 @@
-[![image](images/bg.png)](https://www.youtube.com/)
