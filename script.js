@@ -139,8 +139,18 @@ function renderCart() {
 }
 
 function changeQty(index, delta) {
+    if (delta === 1) {
+        showToast("Quantité augmentée ➕");
+    } else {
+        showToast("Quantité diminuée ➖");
+    }
+
     cart[index].qty += delta;
-    if (cart[index].qty <= 0) cart.splice(index, 1);
+
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+        showToast("Produit supprimé ❌");
+    }
 
     updateCartBadge();
     renderCart();
@@ -172,6 +182,32 @@ document.getElementById('cart-icon-btn')?.addEventListener('click', (e) => {
 
 document.getElementById('cart-close')?.addEventListener('click', closeCart);
 document.getElementById('cart-overlay')?.addEventListener('click', closeCart);
+document.getElementById('btn-commander')?.addEventListener('click', handleCommander);
+document.getElementById('btn-annuler')?.addEventListener('click', handleAnnuler);
+function handleCommander() {
+    if (cart.length === 0) {
+        showToast("Panier vide !");
+        return;
+    }
+
+    showToast("Commande confirmée ✅");
+
+    cart = [];
+    updateCartBadge();
+    renderCart();
+    closeCart();
+}
+
+function handleAnnuler() {
+    if (!confirm("Supprimer tous les produits ?")) return;
+
+    cart = [];
+    updateCartBadge();
+    renderCart();
+    closeCart();
+
+    showToast("Panier vidé ❌");
+}
 
 // MODAL
 

@@ -574,8 +574,7 @@ nav a.active {
     justify-content: space-between;
     align-items: center;
 }
-
-.btn-checkout {
+#btn-commander {
     background-color: #a3ad7c;
     color: black;
     border: none;
@@ -586,11 +585,11 @@ nav a.active {
     transition: 0.3s;
 }
 
-.btn-checkout:hover {
+#btn-commander:hover {
     background-color: #91b90f;
 }
 
-.btn-annuler{
+#btn-annuler{
     background: transparent;
     color: black;
     border: 2px solid black;
@@ -601,7 +600,7 @@ nav a.active {
     transition: 0.3s;
 }
 
-.btn-annuler:hover{
+#btn-annuler:hover{
     background-color: white;
 }
 
