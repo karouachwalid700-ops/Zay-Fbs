@@ -746,6 +746,72 @@ nav a.active {
 }
 
 
+.img-inputs{
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.img-inputs input[type="text"]{
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.img-inputs input[type="file"]{
+    border: 2px dashed #a3ad7c;
+    background: #fdfaf0;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s ease;
+    width: 180px;
+}
+
+.img-inputs input[type="file"]:hover{
+    background: #f6f7ed;
+    border-color: #8f9b6b;
+}
+
+.img-inputs input[type="file"]::file-selector-button{
+    background: #a3ad7c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-inputs input[type="file"]::file-selector-button:hover{
+    background: #8f9b6b;
+}
+
+.file-btn{
+    background: #a3ad7c;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.file-btn:hover{
+    background: #8f9b6b;
+}
+
+
 /*  CONTACT PAGE  */
 
 .contact-main {

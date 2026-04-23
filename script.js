@@ -180,17 +180,18 @@ function openAddModal() {
     document.getElementById('product-form').reset();
     document.getElementById('edit-index').value = '';
     document.getElementById('modal-overlay').classList.add('show');
+    uploadedImage = "";
 }
 
 function openEditModal(index) {
     const p = products[index];
-
+    uploadedImage = "";
     document.getElementById('modal-title').textContent = 'Modifier le produit';
     document.getElementById('edit-index').value = index;
     document.getElementById('input-name').value = p.name;
     document.getElementById('input-desc').value = p.desc;
     document.getElementById('input-price').value = p.price;
-    document.getElementById('input-img').value = p.img || '';
+    document.getElementById('input-img-url').value = p.img || "";
 
     document.getElementById('modal-overlay').classList.add('show');
 }
@@ -209,6 +210,23 @@ document.getElementById('modal-overlay')?.addEventListener('click', (e) => {
     if (e.target.id === 'modal-overlay') closeModal();
 });
 
+const fileInput = document.getElementById("input-img-file");
+let uploadedImage = "";
+
+fileInput?.addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        uploadedImage = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+});
+
+
 document.getElementById('product-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -218,7 +236,7 @@ document.getElementById('product-form')?.addEventListener('submit', (e) => {
         name: document.getElementById('input-name').value.trim(),
         desc: document.getElementById('input-desc').value.trim(),
         price: parseInt(document.getElementById('input-price').value),
-        img: document.getElementById('input-img').value.trim()
+        img: uploadedImage || document.getElementById('input-img-url').value.trim()
     };
 
     if (idx !== '') {

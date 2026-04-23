@@ -58,7 +58,16 @@
                 </div>
                 <div class="form-group">
                     <label>URL de l'image</label>
-                    <input type="text" id="input-img" placeholder="https://... ou images/produit.png">
+
+                   <div class="img-inputs">
+                        <input type="text" id="input-img-url" placeholder="https://... ou images/produit.png">
+
+                        <label for="input-img-file" class="file-btn">
+                            <i class="fa-solid fa-upload"></i> Choose File
+                        </label>
+                        <input type="file" id="input-img-file" hidden>
+                   </div>
+
                 </div>
                 <div class="form-group">
                     <label>Description</label>
