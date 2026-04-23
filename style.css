@@ -600,7 +600,7 @@ nav a.active {
     transition: 0.3s;
 }
 
-#btn-annuler:hover{
+.btn-annuler:hover{
     background-color: white;
 }
 
